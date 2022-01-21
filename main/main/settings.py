@@ -1,15 +1,14 @@
 from pathlib import Path
+from .linkmaker import link
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-=1m0ps@0stf#vfj+hd+^j9am!rd_3)3ih%0922=4!+@&v7#b+a'
+SECRET_KEY = 'django-SECRET_KEY'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
-# Application definition
+ALLOWED_HOSTS = ['127.0.0.1',
+'e154-176-59-164-141.ngrok.io', link]
 
 INSTALLED_APPS = [
     'app',
@@ -18,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -28,7 +27,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 ROOT_URLCONF = 'main.urls'
@@ -79,11 +78,9 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-
 STATIC_URL = '/static/'
 STATIC_DIRS = [
     BASE_DIR / "static",
 ]
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
